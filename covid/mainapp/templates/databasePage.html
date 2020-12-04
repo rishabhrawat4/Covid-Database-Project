@@ -23,9 +23,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col text-center">
-                        <input type="search", name="search-item">
-                        <input type="submit" value="Search">
+                    <div class="col-3 text-center mx-auto">
+                      <div class="input-group input-group-sm mb-3">
+                        <input type="search" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="search-item">
+                      </div>
+                      <input type="submit" value="Search" class="btn btn-primary">
                     </div>
                 </div>
                  
@@ -50,7 +52,7 @@
                       </tr>
                       <tr>
                         <td>PubChem ID</td>
-                        <td>{{ data.pubChemId}}</td>
+                        <td>{{ data.pubchemId}}</td>
                       </tr>
                       
                       <tr>

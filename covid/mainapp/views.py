@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Drug
 # Create your views here.
-def homepage(request):
+def databasePage(request):
     if request.method == "POST":
         query = request.POST.get('query')
         message = "false"
@@ -26,7 +26,7 @@ def homepage(request):
                 message = "true"
         print(drugbankId)
         context = {'data': drugbankId, 'message': message}
-        return render(request, 'homepage.html', context)
+        return render(request, 'databasePage.html', context)
 
     context = {'message': "false"}
-    return render(request, 'homepage.html', context)
+    return render(request, 'databasePage.html', context)
