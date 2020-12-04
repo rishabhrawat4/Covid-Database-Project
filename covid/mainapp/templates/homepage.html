@@ -1,0 +1,91 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+    <br>
+    <div class="card">
+        <h5 class="card-header">Search Database</h5>
+        <div class="card-body">
+            <br>
+            <form action = "" method = "POST"> 
+                {% csrf_token %}
+                <div class="row mb-3">
+                    <div class="col text-center" >
+                        <span class="m-2">
+                            <input type="radio" value="drugbankId" name="query" > Search By Drug Bank ID
+                        </span>
+                        <span class="m-2">
+                            <input type="radio" value="drugName" name="query"> Search By Drug Name
+                        </span>
+                        <span class="m-2">
+                            <input type="radio" value="geneSymbol" name="query"> Search By Gene Symbol
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <input type="search", name="search-item">
+                        <input type="submit" value="Search">
+                    </div>
+                </div>
+                 
+            </form>
+            <br>
+            {% if data %}
+            <div class="container">
+                <h3 class="card-title">Result: </h3>
+                <table class="table table-hover">
+                    <tbody>
+                      <tr class="table-active">
+                        <td>Drug Name</td>
+                        <td>{{ data.drugName }}</td>
+                      </tr>
+                      <tr>
+                        <td>Drugbank ID</td>
+                        <td>{{ data.drugbankId }}</td>
+                      </tr>
+                      <tr>
+                        <td>Gene Symbol</td>
+                        <td>{{ data.geneSymbol }}</td>
+                      </tr>
+                      <tr>
+                        <td>PubChem ID</td>
+                        <td>{{ data.pubChemId}}</td>
+                      </tr>
+                      
+                      <tr>
+                        <td>PMID</td>
+                        <td>{{ data.pmid }}</td>
+                      </tr>
+                      <tr>
+                        <td>Approved Against Diseases</td>
+                        <td>{{ data.approvedAgainstDiseases }}</td>
+                      </tr>
+                      <tr>
+                        <td>Disease Mesh ID</td>
+                        <td>{{ data.diseaseMeshId }}</td>
+                      </tr>
+                      <tr>
+                        <td>mechanism of Action</td>
+                        <td>{{ data.mechanismOfAction }}</td>
+                      </tr>
+                      <tr>
+                        <td>Gene Targets</td>
+                        <td>{{ data.geneTargets }}</td>
+                      </tr>
+                      <tr>
+                        <td>Uniport ID</td>
+                        <td>{{ data.uniportId }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            {% endif %}
+            {% if message == "true" %}
+                <span>Result does not exist</span>
+            {% endif %}
+        </div>
+      </div>
+      <br>
+    
+{% endblock content %}
