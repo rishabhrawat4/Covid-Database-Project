@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+   
+    <div class="container col-9">
+        <div>
+            <strong>Drug repurposing</strong> is the process to identify the new indications for existing drugs and is considered an efficient and economical approach. It is also known as repositioning, re-profiling, re-tasking, and rescue of drugs. It has been considered that 75% of known drugs could be repositioned for various diseases. Outbreaks of novel emerging infections such as coronavirus disease 2019 (COVID-19) have unique challenges in front of the health professionals to select appropriate therapeutics/pharmacological treatments in the clinical setup with very little time available for the new drug discovery. Further, the development of a vaccine for any disease including COVID-19 takes time and even if the process is put on the accelerated mode it would take 18–20 months to introduce it as a ready-to-use product. Currently, no specific treatment is available against the new virus severe acute respiratory syndrome coronavirus 2 (SARS-CoV2). Hence, the search for effective therapeutic agents to tackle COVID-19 is vital and urgent. The discovery and licensed use of a drug come with a long-gestation period. The cost of the new drug development process amounts to more than a billion dollars extending for 10–15 years with a success rate of only 2.01%. This creates a lag in the productivity of pharmaceutical research to develop a new drug which results in a persistent gap between therapeutic needs and available treatments. Considering the time and cost required for coming up with new therapies, probing the existing antiviral and other drugs against SARS-CoV2 is cost-effective. In recent times, repurposing of available drugs for the management of the disease is becoming more popular, Therefore, reassessing the efficacy of licensed and experimental drugs has become the go-to choice of the World Health Organization (WHO) and other health agencies to treat emerging health problems.
+        </div>
+        <br>
+        <a href="{% url 'databasePage' %}"><button type="button" class="btn btn-primary">Search Database</button></a>
+    </div>
+    <br>
+    <br>
+{% endblock content %}

@@ -18,6 +18,18 @@ def databasePage(request):
             except Drug.DoesNotExist:
                 drugbankId = None
                 message = "true"
+        elif query == 'pubchemId':
+            try:
+                drugbankId = Drug.objects.get(pubchemId=searchItem)
+            except Drug.DoesNotExist:
+                drugbankId = None
+                message = "true"
+        elif query == 'uniportId':
+            try:
+                drugbankId = Drug.objects.get(uniportId=searchItem)
+            except Drug.DoesNotExist:
+                drugbankId = None
+                message = "true"
         else:
             try:
                 drugbankId = Drug.objects.get(geneSymbol=searchItem)
@@ -30,3 +42,11 @@ def databasePage(request):
 
     context = {'message': "false"}
     return render(request, 'databasePage.html', context)
+
+def homepage(request):
+    context = {}
+    return render(request, 'homepage.html', context)
+
+def contactUs(request):
+    context = {}
+    return render(request, 'contactus.html', context)

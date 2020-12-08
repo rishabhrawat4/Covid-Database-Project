@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <br>
+   
     <div class="card">
         <h5 class="card-header">Search Database</h5>
         <div class="card-body">
@@ -12,7 +12,7 @@
                 <div class="row mb-3">
                     <div class="col text-center" >
                         <span class="m-2">
-                            <input type="radio" value="drugbankId" name="query" > Search By Drug Bank ID
+                            <input type="radio" value="drugbankId" name="query" > Search By Drug Bank Id
                         </span>
                         <span class="m-2">
                             <input type="radio" value="drugName" name="query"> Search By Drug Name
@@ -20,12 +20,18 @@
                         <span class="m-2">
                             <input type="radio" value="geneSymbol" name="query"> Search By Gene Symbol
                         </span>
+                        <span class="m-2">
+                          <input type="radio" value="pubchemId" name="query"> Search By Pubchem Id
+                        </span>
+                        <span class="m-2">
+                          <input type="radio" value="uniportId" name="query"> Search By Uniprot Id
+                        </span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-3 text-center mx-auto">
                       <div class="input-group input-group-sm mb-3">
-                        <input type="search" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="search-item">
+                        <input type="search" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="search-item" required>
                       </div>
                       <input type="submit" value="Search" class="btn btn-primary">
                     </div>
@@ -76,7 +82,7 @@
                         <td>{{ data.geneTargets }}</td>
                       </tr>
                       <tr>
-                        <td>Uniport ID</td>
+                        <td>Uniprot ID</td>
                         <td>{{ data.uniportId }}</td>
                       </tr>
                     </tbody>

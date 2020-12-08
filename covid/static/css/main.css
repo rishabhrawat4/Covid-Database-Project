@@ -1,6 +1,5 @@
 body{
     width: 100%;
-    overflow-x: hidden;
 }
 tr td:first-child{
     font-weight: bold;
